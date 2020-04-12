@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="browse.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+        var area = [
+            ['北京', '上海', '广东'],
+            ['首尔', '仁川', '釜山'],
+            ['旧金山', '华盛顿', '纽约'],
+            ['东京', '大阪', '名古屋'],
+        ];
+
+        function changeSelect() {
+            var slt_area = document.form1.area;
+            var slt_project = document.form1.project;
+            var project_area = area[slt_project.selectedIndex - 1];
+            slt_area.length = 1;
+            for (var i = 0; i < project_area.length; i++) {
+                slt_area[i + 1] = new Option(project_area[i], project_area[i]);
+            }
+        }
+    </script>
+    <script>
+        function submit() {
+            alert("已搜索");
+        }
+    </script>
+    <title>浏览页</title>
+</head>
+<body>
+<ul class="nav">
+    <li>
+        <a chref="#" class="cat">
+            <img src="img/cat.jpeg" width="54" height="54">
+        </a>
+    </li>
+    <li>
+        <a href="home.html">首页</a>
+    </li>
+    <li>
+        <a class="active" href="browser.html">浏览页</a>
+    </li>
+    <li>
+        <a href="searcher.html">搜索页</a>
+    </li>
+    <div class="dropdown">
+        <a class="dropbtn" href="#">个人中心</a>
+        <div class="dropdown-content">
+            <a href="uploading.html">上传</a>
+            <a href="mypicture.html">我的照片</a>
+            <a href="mycollect.html">我的收藏</a>
+            <a href="login.html">登入</a>
+        </div>
+    </div>
+</ul>
+<div id="mySidenav" class="sidenav">
+    <a href="home.html" id="a">首页</a>
+    <a href="browser.html" id="b">浏览页</a>
+    <a href="searcher.html" id="c">搜索页</a>
+    <a href="mypicture.html" id="d">我的照片</a>
+</div>
+<div class="row">
+    <div class="column left">
+        <div class="search">
+            <h2>标题搜索</h2>
+            <form action="#">
+                <input type="text" placeholder="搜索.." name="search">
+                <button type="submit"><i class="i-s" onclick="submit()"></i></button>
+            </form>
+        </div>
+    </div>
+    <div class="maintag">
+        <div class="tag1">
+            <div class="tagname1">热门国家</div>
+            <div class="tagshow1">
+                <ul class="list">
+                    <li><img src="img/ch.jpg"><a href="#">中国</a></li>
+                    <li><img src="img/kr.jpg"><a href="#">韩国</a></li>
+                    <li><img src="img/am.jpg"><a href="#">美国</a></li>
+                    <li><img src="img/jp.jpg"><a href="#">日本</a></li>
+                    <li><img src="img/ru.jpg"><a href="#">俄罗斯</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="tag2">
+            <div class="tagname2">热门城市</div>
+            <div class="tagshow2">
+                <ul class="list">
+                    <li><img src="img/ch.jpg"><a href="#">北京</a></li>
+                    <li><img src="img/kr.jpg"><a href="#">首尔</a></li>
+                    <li><img src="img/am.jpg"><a href="#">纽约</a></li>
+                    <li><img src="img/jp.jpg"><a href="#">东京</a></li>
+                    <li><img src="img/ru.jpg"><a href="#">莫斯科</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="column right">
+        <form name="form1" method="post" action="#">
+            <select>
+                <option value="0">请选择主题</option>
+                <option value="1">现代城市</option>
+                <option value="2">自然风景</option>
+                <option value="2">建筑之风</option>
+                <option value="2">繁华街道</option>
+                <option value="2">朴素街道</option>
+            </select>
+
+            <select id="project" onchange="changeSelect()">
+                <option value="0">请选择国家</option>
+                <option value="1">中国</option>
+                <option value="2">韩国</option>
+                <option value="2">美国</option>
+                <option value="2">日本</option>
+            </select>
+
+            <select id="area">
+                <option value="">请选择城市</option>
+            </select>
+            <button type="submit"><i class="i-s" onclick="submit()"></i></button>
+        </form>
+        <div>
+            <table cellspacing="30px">
+                <tr>
+                    <td>
+                        <a href="#">
+                            <img src="img/1.jpg" title="title">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#">
+                            <img src="img/2.jpg" title="title">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#">
+                            <img src="img/3.jpg" title="title">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#">
+                            <img src="img/4.jpg" title="title">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#">
+                            <img src="img/1.jpg" title="title">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#">
+                            <img src="img/2.jpg" title="title">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#">
+                            <img src="img/3.jpg" title="title">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#">
+                            <img src="img/4.jpg" title="title">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#">
+                            <img src="img/1.jpg" title="title">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#">
+                            <img src="img/2.jpg" title="title">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#">
+                            <img src="img/3.jpg" title="title">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#">
+                            <img src="img/4.jpg" title="title">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <ul class="pagenum">
+            <li><a href="#"> < </a></li>
+            <li><a href="#"> 1 </a></li>
+            <li><a href="#"> 2 </a></li>
+            <li><a href="#"> 3 </a></li>
+            <li><a href="#"> 4 </a></li>
+            <li><a href="#"> 5 </a></li>
+            <li><a href="#"> ... </a></li>
+            <li><a href="#"> > </a></li>
+        </ul>
+    </div>
+</div>
+<div class="top">
+    <a href="#">
+        <img src="img/top.png"width="106"height="100" >
+    </a>
+</div>
+<div class="footer">
+    <h3>备案号19302016002</h3>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="login.css" rel="stylesheet" type="text/css">
+    <title>注册界面</title>
+    <script>
+        function submit() {
+            alert("登录成功！,点击确定跳转至首页");
+        }
+    </script>
+</head>
+<body>
+<div class="row">
+    <div class="column left">
+        <img src="img/login.jpg" width="250" height="500">
+        <p>
+            备案号19302016002
+        </p>
+    </div>
+    <div class="column right">
+            <p>
+                您的用户名（字母开头且5~16个字符）<br>
+                <input type="text" name="name" placeholder="username..."
+                       pattern="^[a-zA-Z][a-zA-Z0-9_]{4,15}$"
+                       required="required">
+            </p>
+                请输入密码<br>
+                <input type="password" name="password" placeholder="password..."
+                       pattern="^[a-zA-Z][a-zA-Z0-9]{8,}$"
+                       required="required">
+            </p>
+            <a href="home.html">
+                <input class="submit_bt" type="submit" id="submit" value="登录" onclick="submit()">
+            </a>
+            </p>
+    </div>
+</div>
+</body>
+</html>

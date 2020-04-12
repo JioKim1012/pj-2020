@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="uploading.css" rel="stylesheet" type="text/css">
+    <title>上传界面</title>
+    <script>
+        function submit() {
+            alert("图片已经上传,点击确定跳转至“我的照片");
+        }
+    </script>
+</head>
+<body>
+<ul class="nav">
+    <li>
+        <a chref="#" class="cat">
+            <img src="img/cat.jpeg" width="54" height="54">
+        </a>
+    </li>
+    <li>
+        <a class="active" href="home.html">首页</a>
+    </li>
+    <li>
+        <a href="browser.html">浏览页</a>
+    </li>
+    <li>
+        <a href="searcher.html">搜索页</a>
+    </li>
+    <div class="dropdown">
+        <a class="drop_btn" href="#">个人中心</a>
+        <div class="dropdown_content">
+            <a href="uploading.html">上传</a>
+            <a href="mypicture.html">我的照片</a>
+            <a href="mycollect.html">我的收藏</a>
+            <a href="login.html">登入</a>
+        </div>
+    </div>
+</ul>
+<div class="sidenav" id="mySidenav">
+    <a href="home.html" id="a">首页</a>
+    <a href="browser.html" id="b">浏览页</a>
+    <a href="searcher.html" id="c">搜索页</a>
+    <a href="mypicture.html" id="d">我的照片</a>
+</div>
+<div class="upload">
+    <div class="show"><h3>图片未上传</h3></div>
+    <img alt="" class="add-img" src="">
+    <div class="add-btn">选择文件</div>
+    <input class="add-file" onchange="previewFile()" type="file">
+    <div/>
+    <p>图片标题：</p>
+    <input class="t_text" name="title" type="text">
+    <p>图片描述：</p>
+    <input class="d_text" name="describe" type="text">
+    <p>图片国家：</p>
+    <input class="ci_text" name="city" type="text">
+    <p>图片城市：</p>
+    <input class="co_text" name="country" type="text">
+    <a href="mypicture.html">
+        <input class="submit_bt" type="submit" onclick="submit()" value="提交">
+    </a>
+</div>
+<hr>
+<p>备案号19302016002</p>
+<hr>
+</body>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script>
+    $(".add-btn").click(function () {
+        $('[type=file]').click();
+    });
+
+    function previewFile() {
+        var preview = document.getElementsByClassName("add-img")[0];
+        var file = document.getElementsByClassName('add-file')[0].files[0];
+        var reader = new FileReader();
+        reader.addEventListener("load", function () {
+            preview.src = reader.result;
+        }, false);
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="src/index.css" rel="stylesheet" type="text/css">
+    <title>注册界面</title>
+    <script>
+        function submit() {
+            alert("注册成功！,点击确定跳转至登录页面");
+        }
+    </script>
+</head>
+<body>
+<div class="row">
+    <div class="column left">
+        <img src="img/login.jpg" width="250" height="500">
+        <p>
+            备案号19302016002
+        </p>
+    </div>
+    <div class="column right">
+            <p>
+                您的用户名（字母开头且5~16个字符）<br>
+                <input type="text" name="name" placeholder="username..."
+                       pattern="^[a-zA-Z][a-zA-Z0-9_]{4,15}$"
+                       required="required">
+            </p>
+            您的邮箱<br>
+            <input type="email" name="email" placeholder="email..."
+                   pattern="^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$"
+                   required="required">
+            <p>
+                请设置密码<br>
+                <input type="password" name="password" placeholder="password..." id="pw1"
+                       pattern="^[a-zA-Z][a-zA-Z0-9]{8,}$"
+                       required="required">
+            </p>
+            <p>
+                请确认密码<br>
+                <input type="password" name="re-password"
+                       placeholder="please input again..." id="pw2"
+                       onkeyup="validate()"/><span
+                    id="test"
+                    pattern="^[a-zA-Z][a-zA-Z0-9]{8,}$"
+                    required="required"></span>
+            </p>
+            <a href="login.html">
+                <input class="submit_bt" type="submit" id="submit" value="注册" onclick="submit()">
+            </a>
+            </p>
+    </div>
+</div>
+<script>
+    function validate() {
+        var pw1 = document.getElementById("pw1").value;
+        var pw2 = document.getElementById("pw2").value;
+        if (pw1 == pw2) {
+            document.getElementById("test").innerHTML = "<br><font color='green'>两次密码一致</font>";
+            document.getElementById("submit").disabled = false;
+        } else {
+            document.getElementById("test").innerHTML = "<br><font color='red'>两次密码不一致</font>";
+            document.getElementById("submit").disabled = true;
+        }
+    }
+</script>
+</body>
+</html>
